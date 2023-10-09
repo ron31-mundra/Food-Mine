@@ -7,8 +7,6 @@ import { UserModel } from "../models/user.model.js";
 
 const router=Router()
 
-
-
 router.get("/seed", asyncHandler(
     async (req, res) => {
         const usersCount = await UserModel.countDocuments();
@@ -22,19 +20,35 @@ router.get("/seed", asyncHandler(
 }
 ))
 
-router.post("/login", (req, res) => {
-    const {email, password} = req.body;
-    const user = sample_Users.find(user => user.email === email 
-        && user.password === password);
+// router.post("/login", (req, res) => {
+//     const {email, password} = req.body;
+//     const user = sample_Users.find(user => user.email === email 
+//         && user.password === password);
 
-    if(user) {
+//     if(user) {
+//         res.send(generateTokenReponse(user));
+//     }
+//     else{
+//         const BAD_REQUEST = 400;
+//         res.status(BAD_REQUEST).send("Username or password is invalid!");
+//     }
+// })
+
+router.post("/login", asyncHandler(
+    async (req, res) => {
+        const {email, password} = req.body;
+        const user = await UserModel.findOne({email , password});
+
+        if(user) {
         res.send(generateTokenReponse(user));
+        }
+        else{
+            const BAD_REQUEST = 400;
+            res.status(BAD_REQUEST).send("Username or password is invalid!");
+        } 
+
     }
-    else{
-        const BAD_REQUEST = 400;
-        res.status(BAD_REQUEST).send("Username or password is invalid!");
-    }
-})
+))
 
 const generateTokenReponse = (user) => {
     const token = jwt.sign(
