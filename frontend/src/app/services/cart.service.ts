@@ -24,6 +24,7 @@ export class CartService {
     this.setCartToLocalStorage();
   }
   
+  
   removeFromCart(foodId: string): void {
     this.cart.items = this.cart.items
       .filter(item => item.food.id != foodId);
