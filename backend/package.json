@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start":"cd src && nodemon server.js",
+    "start": "cd src && nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ronak Mundra",
@@ -13,6 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "typescript": "^5.2.2"
   },
   "devDependencies": {

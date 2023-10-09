@@ -3,7 +3,7 @@ export const sample_foods = [
         id:'1',
         name: 'Pizza Pepperoni',
         cookTime: '10-20',
-        price: 10,
+        price: 500,
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
@@ -13,7 +13,7 @@ export const sample_foods = [
     {
         id:'2',
         name: 'Meatball',
-        price: 20,
+        price: 200,
         cookTime: '20-30',
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
@@ -24,7 +24,7 @@ export const sample_foods = [
     {
         id:'3',
         name: 'Hamburger',
-        price: 5,
+        price: 250,
         cookTime: '10-15',
         favorite: false,
         origins: ['germany', 'us'],
@@ -35,7 +35,7 @@ export const sample_foods = [
     {
         id:'4',
         name: 'Fried Potatoes',
-        price: 2,
+        price: 150,
         cookTime: '15-20',
         favorite: true,
         origins: ['belgium', 'france'],
@@ -46,7 +46,7 @@ export const sample_foods = [
     {
         id:'5',
         name: 'Chicken Soup',
-        price: 11,
+        price: 600,
         cookTime: '40-50',
         favorite: false,
         origins: ['india', 'asia'],
@@ -57,7 +57,7 @@ export const sample_foods = [
     {
         id:'6',
         name: 'Vegetables Pizza',
-        price: 9,
+        price: 350,
         cookTime: '40-50',
         favorite: false,
         origins: ['italy'],
@@ -76,4 +76,23 @@ export const sample_tags = [
     { name: 'Hamburger', count: 1 },
     { name: 'Fry', count: 1 },
     { name: 'Soup', count: 1 },
+]
+
+export const sample_Users=[
+    {
+        name: "Ronak Mundra",
+        email: "ronak@gmail.com",
+        password: "12345",
+        address: "Jaipur",
+        isAdmin: true,
+        token:''
+    },
+    {
+        name: "test User",
+        email: "test@gmail.com",
+        password: "12345",
+        address: "Udaipur",
+        isAdmin: false,
+        token:''
+    },
 ]
