@@ -58,6 +58,7 @@ const generateTokenReponse = (user) => {
     );
 
     user.token = token;
+    console.log(user)
     return user;
 }
 
